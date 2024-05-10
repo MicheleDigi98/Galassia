@@ -1,0 +1,29 @@
+@import "../../Variables";
+
+.Star{
+  --posX: 0;
+  --posY: 0;
+  --posZ: 0;
+  --rotateX: 0;
+  --rotateY: 0;
+  --rotateZ: 0;
+  --size: 0;
+
+  display: block;
+  width: calc(var(--size) * 2px);
+  height: calc(var(--size) * 2px);
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  --calcX: calc(-50% + var(--posX));
+  --calcY: calc(-50% + var(--posY));
+
+  transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) rotateZ(var(--rotateZ)) translateX(var(--calcX)) translateY(var(--calcY)) translateZ(var(--posZ));
+
+  background-color: white;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 50%);
+  border-radius: 50%;
+}
